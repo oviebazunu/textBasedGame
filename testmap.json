@@ -1,0 +1,79 @@
+{
+  "rooms":[
+  {
+    "id":"room1",
+    "desc":"You are alone in a room. In front of you is a sign that says 'Slay the dragon to escape, but understand this is no easy task, you will need to enchanted sword to stand a chance'. There is a door east.",
+    "exits":{"east":"room2"}
+  },
+  {
+    "id":"room2",
+    "desc":"You are now in a new room! There is nothing here?. Maybe try going back by taking the door you just used on your west!",
+    "exits":{"west":"room3"}
+  },
+  {
+    "id":"room3",
+    "desc":"You are now in a new room. You should try escaping via that exit north of you as there appears to be no other way out!",
+    "exits":{"north":"room4"}
+  },
+  {
+    "id":"room4",
+    "desc":"You enter a room with a mountain of gold. At the top of this mountain is an apple. There is an exit north or you can go back south.",
+    "exits":{"north":"room5", "south":"room4"}
+  },
+  {
+    "id":"room5",
+    "desc":"You have entered the dragons lair! In front of you lies the enchated sword. Use this to slay the dragon! Or return south to go back.",
+    "exits":{"south":"room4"}
+  }
+  ],
+  "objects":[
+  {
+    "id":"enchanted sword",
+    "desc":"The myth is true, this is the one and only enchanted sword! Legend has it this sword can slay any foe. Even the dragon!",
+    "initialroom":"room5"
+  },
+  {
+    "id":"apple",
+    "desc":"Use the 'eat apple' command to gain an additional life!",
+    "initialroom":"room4"
+  }
+  ],
+  "enemies":[
+  {
+    "id":"zombie",
+    "desc":"There is a zombie that looks like it wants to attack you! You require a weapon to kill the zombie.",
+    "aggressiveness":100,
+    "initialroom":"room2",
+    "killedby":["enchanted sword"]
+  },
+  {
+    "id":"werewolf",
+    "desc":"There is a werewolf that looks like it wants to attack you! You require a weapon to kill the werewolf.",
+    "aggressiveness":100,
+    "initialroom":"room3",
+    "killedby":["enchanted sword"]
+  },
+  {
+    "id":"golem",
+    "desc":"It is guarded by a sleeping golem. A weapon is needed to kill the him. If you leave the room he will awaken. Try eating the apple to help survive as you escape.",
+    "aggressiveness":100,
+    "initialroom":"room4",
+    "killedby":["enchanted sword"]
+  },
+  {
+    "id":"dragon",
+    "desc":"Be sneaky, the dragon is right in front of you. He has not yet seen you..",
+    "aggressiveness":100,
+    "initialroom":"room5",
+    "killedby":["enchanted sword"]
+  }
+  ],
+  "player":{
+    "initialroom":"room1"
+  },
+  "objective":{
+    "type":"kill",
+    "what":["dragon"]
+  }
+}
+

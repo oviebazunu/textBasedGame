@@ -1,0 +1,14 @@
+Please note we have implemented all required features alongside some additional ones. 
+
+We have a '?' command that can be used by the user to list all commands availible within the game. In this list you will notice all the commands that should be present alongside 2 additional ones. 
+
+These are:
+
+- Check lives:
+    Shows the number of lives the user has.
+- Eat:
+    Performing 'eat[apple]' will replenish a life.
+
+With these additional features we have made it so users start the game with 3 lives and when the user dies in the game they lose a life and are able to continue playing until they reach zero lives.
+
+To showcase this we have also created a map called 'testmap.json', which can be used to test these new features out. In this map you will find that the player is unable to collect the weapon with the 3 given lives, and has to "escape" rooms with no weapon. Enemies in these rooms attack the player as they leave, and the player is unable kill them as he requires a sword. After losing 2 lives and having one remaining the user can find themselves in a room with a 'Golem'. This golem will attack them as they leave killing them, however there is an apple in this room that the user can pick up and eat, granting an additional life. They can they escape this room and reach the final room where they will find a sword. They can use this sword to kill the final boss (dragon), winning the game. This map can only be completed with the use of the additional life system prompting the user to use the eat command.
